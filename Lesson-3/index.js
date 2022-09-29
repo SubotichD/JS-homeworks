@@ -60,6 +60,7 @@ for (let i = 8; i <= 56; i++) {
   } 
   console.log('Min' , min, 'Max' , max)    
   console.log('Min' , min, 'Max' , max)    
+  console.log('Commit-2')    
 
 
 
