@@ -5,6 +5,7 @@ for (let i = 1; i <= 50; i++){
 
 for (let i = 35; i >= 8; i--) {
     console.log(i)
+    console.log(i)
 }
 
                 // second exesciz
