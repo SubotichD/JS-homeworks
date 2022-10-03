@@ -55,5 +55,13 @@
                        for (let i = arrrr.length - 1; i >= 0; i--) {
                            console.log(arrrr[i]);
                        }
+
+                     //  (10)
+let arrr = [ 48,9,0,4,21,2,1,0,8,84,76,8,4,13,2]     
+let sum = 0
+for(let i = arrr.indexOf(0); i<= arrr.lastIndexOf(0); i++){
+   sum+= arrr[i]
+}   
+console.log(sum)             
                        
                        

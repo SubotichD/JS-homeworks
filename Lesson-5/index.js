@@ -100,7 +100,28 @@ console.log(isEven(10));
 
 
 // (9)
+function  getFibNumber(n) {
+    let array = [0, 1];
+    for ( let i = 2; i<=n; i++) { 
+            array[i] = array[i-1] + array[i-2];
+        }
+        console.log(array);
+    }
 
+
+
+    let i = 0;
+    function showAllDigits(arr) {
+        
+        if(i < arr.length){
+            console.log(arr[i])
+            i++
+            showAllDigits(arr)
+
+        }
+    }
+
+    showAllDigits ([1, 2, 3, 4, 5, 6])
 
   
 
