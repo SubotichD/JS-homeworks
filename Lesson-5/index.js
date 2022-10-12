@@ -123,6 +123,60 @@ function  getFibNumber(n) {
 
     showAllDigits ([1, 2, 3, 4, 5, 6])
 
+
+
+                    // 12
+
+document.write('<br>Задание.12 в console log.<br>')
+
+function topBottomRamka(length){
+    let ramka = "";
+    for (let i=0; i<length; i++){
+        ramka += "*";
+    }
+    console.log(ramka);
+}
+
+let string = [];
+string.push("Домашняя работа \"Функции\"");
+
+let groupN = prompt("Введите номер группы");
+string.push("Выполнил студент гр. " + groupN);
+
+let lastName = prompt("Введите фамилию");
+let name = prompt("Введите имя");
+let patronymic = prompt("Введите отчество");
+let fio = lastName + ' ' + name + ' ' + patronymic;
+string.push(fio);
+
+let dlinaRamki = 0;
+for (let i=0; i<string.length;i++){
+    if (dlinaRamki < string[i].length){
+        dlinaRamki = string[i].length;
+    }
+}
+dlinaRamki += 2;
+topBottomRamka(dlinaRamki);
+for (let i=0; i<string.length; i++){
+    let resultString = "*";
+    for (let j=0; j<dlinaRamki;j++){
+        if (string[i][j] === undefined){
+            if (j === dlinaRamki-2){
+                resultString += '*';
+            }
+            else{
+                resultString += ' ';
+            }
+        }
+        else{
+            resultString += string[i][j];
+        }
+    }
+    console.log(resultString);
+}
+topBottomRamka(dlinaRamki);
+
+
   
 
 

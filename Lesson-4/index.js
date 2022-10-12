@@ -1,11 +1,11 @@
  // Массивы
                         // 1 exers
                     
-                        let arr = [1,2,3,4,5];
-                        for (let i = 0; i < arr.length; i++){
-                           console.log(arr[i]);
-                           // document.write(arr[i]);
-                        }
+                        // let arr = [1,2,3,4,5];
+                        // for (let i = 0; i < arr.length; i++){
+                        //    console.log(arr[i]);
+                        //    // document.write(arr[i]);
+                        // }
                        
                        
                                        // 2 exers
@@ -13,14 +13,29 @@
                        
                        let ar = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7] ; 
                        
-                       for(i = 0; i<arr.length; i++){
-                        if(ar[i] > 10 && arr[i] < -3){
+                       for(i = 0; i<ar.length; i++){
+                        if(ar[i] > 10 && ar[i] < -3){
                            console.log(ar[i]+'<br>');
                         }
                            
                            }
                        
                                            // 3 exers
+  let arr = [],
+     sum =0,
+     arr1 = [];
+for (i= 23; i<= 57; i++){
+    arr.push(i);
+}console.log(arr);
+let a =23;
+while (a<=57){
+    arr1.push(a);
+    a++;
+}console.log(arr1);
+//Сумма
+for(j=0; j< arr.length; j++){
+    sum = sum+arr[j];
+} console.log('Сумма: ' + sum);                                          
                        
                        
                        
@@ -57,11 +72,11 @@
                        }
 
                      //  (10)
-let arrr = [ 48,9,0,4,21,2,1,0,8,84,76,8,4,13,2]     
-let sum = 0
-for(let i = arrr.indexOf(0); i<= arrr.lastIndexOf(0); i++){
-   sum+= arrr[i]
-}   
-console.log(sum)             
+// let arrr = [ 48,9,0,4,21,2,1,0,8,84,76,8,4,13,2]     
+// let sum = 0
+// for(let i = arrr.indexOf(0); i<= arrr.lastIndexOf(0); i++){
+//    sum+= arrr[i]
+// }   
+// console.log(sum)             
                        
                        
