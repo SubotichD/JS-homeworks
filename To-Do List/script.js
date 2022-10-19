@@ -17,15 +17,19 @@
     input.classList.add('form-control');
     input.placeholder = 'Введите название нового дела';
     buttonWrapper.classList.add('input-group-append');
+    button.classList.add('btn', 'btn-primary');
     button.textContent = 'Добавить дело';
+
+    buttonWrapper.append(button);
+    form.append(input);
+    form.append(buttonWrapper);
 
     return {
       form,
       input,
       button,
     };
-    
-    
+     
   }
 
   //  создаем и возвращаем список елементов
@@ -35,10 +39,10 @@
     return list;
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    let container = documment.getElementById('todo-app');
+  document.addEventListener('DOMContentLoaded', function() {
+    let container = document.getElementById('todo-app');
   
-    let todoAppTitle = createApptitle('Список дел');
+    let todoAppTitle = createAppTitle('Список дел');
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
   
@@ -62,7 +66,7 @@
   
     buttonGroup.classList.add('btn-group', 'btn-group-sm');
     doneButton.classList.add('btn', 'btn-success');
-    doneButton.textContent = 'готово';
+    doneButton.textContent = 'Готово';
     deleteButton.classList.add('btn', 'btn-danger');
     deleteButton.textContent = 'Удалить';
     
@@ -84,7 +88,7 @@
     let container = document.getElementById('todo-app');
   
   
-    let todoAppTitle = createAppTitle('Мои дела');
+    let todoAppTitle = createAppTitle('Список дел');
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
     let todoItems = [createTodoItem('Сходить за хлебом'),createTodoItem('Купить молоко')];
@@ -95,7 +99,45 @@
     container.append(todoList);
     container.append(todoItems[0].item);
     container.append(todoItems[1].item);
-  
+
+      // браузер создает событие  submit на форме по нажатию на enter или на кнопку создания дела
+  todoItemForm.form.addEventListener('submit', function(e){
+  // Эта строчка необходима,чтобы предотвратить стандартное действие браузера 
+    // В данном случае мы не хотим, чтобы страница перезагружалась при отправке формы
+    e.preventDefault();
+
+    // Игнорируем создания элемента,если пользователь ничего не ввел в поле
+    if (!todoItemForm.input.value) {
+      return;
+    };
+
+    let todoItem = createTodoItem(todoItemForm, input ,value);
+
+    // добавляем обработчики на кнопки
+    todoItem.doneButton.addEventListener('click', function(){
+      todoItem.item.classList.toggle('list-group-item-success');
+    })
+    todoItem.deleteButton.addEventListener('click', function(){
+      if(confirm('Вы уверены?')){
+        todoItem.item.remove();
+      }
+    });
+
+    // Создаем и добавляем в  список новое дело с названием из поля для ввода
+    todoList.append(todoItem.item
+      );
+    // Обнуляем значение в поле,чтобы не пришлось стираь его вручную
+    todoItemForm.input.value = '';
+
+
+  }
+ 
+  )
+   {
+   
+
+
+  }
   });
 
 })();
